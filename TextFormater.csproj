@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+	</PropertyGroup>
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>.\bin</OutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>.\bin</OutputPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="utils.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Include="..\..\osopen\StarLibCS\files.cs" Link="files.cs" />
+	  <Compile Include="..\..\osopen\StarLibCS\strings.cs" Link="strings.cs" />
+	</ItemGroup>
+</Project>
